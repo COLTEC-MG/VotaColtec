@@ -165,26 +165,6 @@ function onMessage(e) {
       }
     }
     
-/*    var scriptProperties = PropertiesService.getScriptProperties(); // Pega as propriedades armazenadas do script.
-    var atualizarSenha = scriptProperties.getProperty('Tempo'); // Verifica o tempo que o script está com aquela senha.
-    if (atualizarSenha == null) { // Caso não haja nenhuma propriedade, cria novas.
-      scriptProperties.setProperty('Tempo', dataInicioTeste);
-      var SENHA = charIdGenerator();
-      scriptProperties.setProperty('Word', SENHA);
-    }
-    else {
-      if (dataInicioTeste - atualizarSenha > ms_Day) { // Caso o tempo tenha se passado, cria novos temporizadores e senha.
-        scriptProperties.deleteAllProperties();
-        ‬scriptProperties.setProperty('Tempo', dataInicioTeste);
-        var SENHA = charIdGenerator();
-        scriptProperties.setProperty('Word', SENHA);
-      }
-      else { // Caso ainda esteja válido, apenas atribiu a propriedade à variável senha.
-        var SENHA = scriptProperties.getProperty('Word');
-      }
-    }
-    */
-    
     var cipher = new cCryptoGS.Cipher(SENHA, 'aes'); // Chama o objeto de criptografia.
     var linkPlanilhaCrypto = cipher.encrypt(linkPlanilha); // Criptografa o link da planilha.
     // Inicia a cédula de votação apenas por usuários autorizados.
